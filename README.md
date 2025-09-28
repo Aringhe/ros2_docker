@@ -10,14 +10,14 @@ It allows you to develop and test ROS 2 applications without installing ROS 2 di
 ### 1. Build the Docker image
 From the root of this repo, run:
 
-```bash
+``bash
 docker build -t ros2:humble_ws .
 
 2. Run the container
 
 Mount a local workspace folder (~/my_ros_projects) into the container’s /root/ros2_ws:
 
-```bash
+``bash
 docker run -it -v ~/my_ros_projects:/root/ros2_ws ros2:humble_ws
 
 This opens a shell inside the container with ROS 2 installed.
