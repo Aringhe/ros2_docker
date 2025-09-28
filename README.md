@@ -27,6 +27,6 @@ This opens a shell inside the container with ROS 2 installed.
 Inside the container, check versions to verify installation:
 
 ```ros2 --help
-colcon --help```s
+colcon --help```
 
 
