@@ -1,18 +1,32 @@
-# ROS2 Docker Workspace
+# ROS 2 in Docker
 
-This repository provides a Docker container for ROS2 (Humble) with a ready-to-use workspace.
+This repository provides a Docker environment for running ROS 2 Humble.  
+It allows you to develop and test ROS 2 applications without installing ROS 2 directly on your host system.
 
-## Features
-- Ubuntu 22.04 base image
-- ROS2 Humble desktop
-- Colcon build tools installed
-- Workspace at /root/ros2_ws
+---
 
-## Getting Started
+## 🚀 Getting Started
 
-1. Clone the repo:
-   git clone https://github.com/<username>/ros2_docker.git
-2. Build the Docker image:
-   docker build -t ros2:humble_ws .
-3. Run the container:
-   docker run -it -v ~/my_ros_projects:/root/ros2_ws ros2:humble_ws
+### 1. Build the Docker image
+From the root of this repo, run:
+
+```bash
+docker build -t ros2:humble_ws .
+
+2. Run the container
+
+Mount a local workspace folder (~/my_ros_projects) into the container’s /root/ros2_ws:
+
+```bash
+docker run -it -v ~/my_ros_projects:/root/ros2_ws ros2:humble_ws
+
+This opens a shell inside the container with ROS 2 installed.
+
+3. Verify ROS 2 installation
+
+Inside the container, check versions to verify installation:
+
+ros2 --help
+colcon --help
+
+
